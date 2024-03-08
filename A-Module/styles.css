@@ -86,7 +86,7 @@ header {
 /* 슬라이드 스타일 */
 
 /* 인포메이션 스타일 */
-#informationContainer {
+.implContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@ header {
     margin-top: 50px;
 }
 
-#informationContainer>h1 {
+.implContainer>h1 {
     color: white;
 }
 
@@ -127,11 +127,11 @@ header {
     font-weight: 700;
     background-color: #0d6efd;
 }
-
-
-
-
 /* 인포메이션 스타일 */
+
+/* 스케쥴 스타일 */
+
+/* 스케쥴 스타일 */
 
 /* 컨테이너 스타일 */
 

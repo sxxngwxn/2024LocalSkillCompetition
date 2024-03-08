@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>home</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <!-- 헤더 영역 (1320px) -->
 <header>
     <span>
-        <img src="/logo.png" alt="" id="logo">
+        <a href="/">
+            <img src="/logo.png" alt="로고" id="logo">
+        </a>
     </span>
     <span>
-        <a href="./sub01.html">information</a>
-        <a href="./sub02.html">statistics</a>
-        <a href="./sub03.html">reservation</a>
-        <a href="./sub04.html">goods</a>
+        <a href="./sub01.html" class="navE">information</a>
+        <a href="./sub02.html" class="navE">statistics</a>
+        <a href="./sub03.html" class="navE">reservation</a>
+        <a href="./sub04.html" class="navE">goods</a>
     </span>
     <span>
         <a href="#">로그인</a>
@@ -27,13 +29,50 @@
 
 <!-- 컨테이너 영역 -->
 <div id="container">
+    <!-- 슬라이드 영역 -->
+    <div id="slideContainer">
+        <div id="mainSlider">
+            <img src="/img/slide1.png" alt="Image 1">
+            <img src="/img/slide2.png" alt="Image 2">
+            <img src="/img/slide3.png" alt="Image 3">
+            <img src="/img/slide4.png" alt="Image 4">
+        </div>
+    </div>
+    <!-- 슬라이드 영역 -->
 
+    <!-- 인포메이션 영역 -->
+    <div id="informationContainer">
+        <h1>INFORMATION</h1>
+        <div id="information">
+            <img src="/선수제공파일/images/02.jpg" alt="">
+            <div id="informationText">
+                <p class="whiteText">Skills baseball park는 시민들의 복리증진을 위하여 설치되었으며,</p>
+                <p class="whiteText">시민들의 건강 및 복지향상과 시민들에게 편리한 시설물 이용을 위한 야구장입니다.</p>
+                <br>
+                <p class="whiteText">야구를 사랑하며 즐기는 생활체육인들이 모이는 곳</p>
+                <br>
+                <p class="whiteText">다양한 즐거움과 감동을 선사하는 곳</p>
+                <br>
+                <p class="whiteText">Skills baseball park</p>
+                <br>
+                <br>
+                <a href="./sub01.html"><button class="blueBtn">infomation으로 이동</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- 인포메이션 영역 -->
 </div>
 <!-- 컨테이너 영역 -->
 
 <!-- 푸터 영역 -->
 <footer>
-
+    <div>
+        <img src="/logo.png" alt="">
+        <p>Copyrightⓒ Skills baseball park. All rights reserved.</p>
+        <p>Call: 142-3677</p>
+        <p>Email: help@skillsbaseballpark.com</p>
+        <p>Address: (12345) 서울특별서 중구 중북로 71</p>
+    </div>
 </footer>
 <!-- 푸터 영역 -->
 </html>

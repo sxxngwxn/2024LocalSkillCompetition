@@ -15,9 +15,9 @@
         </a>
     </span>
     <span>
-        <a href="./sub01.html" class="navE">information</a>
-        <a href="./sub02.html" class="navE">statistics</a>
-        <a href="./sub03.html" class="navE">reservation</a>
+        <a href="./sub01.html" class="navE">information</a> |
+        <a href="./sub02.html" class="navE">statistics</a> |
+        <a href="./sub03.html" class="navE">reservation</a> |
         <a href="./sub04.html" class="navE">goods</a>
     </span>
     <span>
@@ -65,12 +65,97 @@
     <!-- 스케쥴 영역 -->
         <div class="implContainer">
             <h1>GAME SCHEDULE</h1>
-            <div>
-                
+            <div id="gameStatus">
+                <div class="team">
+                    <span>
+                        <img src="/teamWeb.png" alt="">
+                    </span>
+                    <p>team Web</p>
+                </div>
+                <p>5 : 4</p>
+                <div class="team">
+                    <span>
+                        <img src="/teamDesign.png" alt="">
+                    </span>
+                    <p>team Design</p>
+                </div>
             </div>
 
         </div>
+
+        <div class="implContainer">
+            <table id="scheduleTable">
+                <tr>
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td><a href="#modal" id="modal20">20</a></td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     <!-- 스케쥴 영역 -->
+
+    <!-- 모달 영역 -->
+        <div id="modal">
+            <h2>4월 20일</h2>
+            <img src="/baseballPic.png" alt="">
+            <div>
+                <h1>
+                    아직 게임이 없습니다.
+                </h1>
+            </div>
+            <a href="#gameStatus"><button>X</button></a>
+        </div>
+    <!-- 모달 영역 -->
+
 </div>
 <!-- 컨테이너 영역 -->
 

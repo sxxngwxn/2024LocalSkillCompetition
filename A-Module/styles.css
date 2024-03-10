@@ -5,6 +5,10 @@
     color: black;
 }
 
+li{
+    list-style: none;
+}
+
 /* 헤더 스타일 */
 header {
     width: 100%;
@@ -26,6 +30,7 @@ header {
 
 .navE:hover{
     font-weight: 700;
+    color: orange;
 }
 
 #logo{
@@ -256,6 +261,82 @@ tr>td:last-child, th:last-child, td>a{
 
 /* 스케쥴 스타일 */
 
+/* 리그별 순위 */
+
+#league {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0 20px 0;
+}
+
+#league p, #league a{
+    color: white;
+    font-weight: 700;
+}
+
+#league div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+}
+#league p{
+    visibility: visible;
+}
+
+#league li{
+    margin-top: 10px;
+}
+
+#league p:hover{
+    color: orange;
+}
+
+.dropMenu li:hover{
+    color: orange;
+}
+
+#league>div:hover .dropMenu{
+    visibility: visible;
+}
+/* ----------- */
+
+#leagueDetail{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+#leagueDetail div{
+    display: none;
+
+}
+
+#leagueDetail ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#leagueDetail p, #leagueDetail li{
+    color: white;
+    font-weight: 700;
+}
+
+#leagueDetail li{
+    margin-top: 10px;
+}
+
+#leagueDetail div:target{
+    display: block;
+    margin-left: 20px;
+}
+
+
+
+/* 리그별 순위 */
 
 
 /* 컨테이너 스타일 */

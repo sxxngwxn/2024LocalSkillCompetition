@@ -378,6 +378,89 @@ tr>td:last-child, th:last-child, td>a{
 
 /* 부문별 TOP5 */
 
+/* 갤러리 스타일 */
+#gallery {
+    width:1000px;
+    overflow: hidden;
+}
+
+#gallerySlide{
+    width: 1600px;
+    display: flex;
+}
+
+#gallerySlide img{
+    width: 500px;
+    height: 333px;
+}
+
+#description{
+    width: 400px;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#description p {
+    color: white;
+    font-weight: 800
+}
+
+.galleryImg{
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#two:checked ~ #gallerySlide{
+    animation: 2s galleryMove1 forwards;
+}
+
+#three:checked ~ #gallerySlide{
+    animation: 2s galleryMove2 forwards;
+}
+
+#four:checked ~ #gallerySlide{
+    animation: 2s galleryMove3 forwards;
+}
+
+
+
+@keyframes galleryMove1 {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-12%);
+    }
+}
+
+@keyframes galleryMove2 {
+    from{
+        transform: translateX(-12%);
+    }
+    to{
+        transform: translateX(-25%);
+    }
+}
+
+@keyframes galleryMove3 {
+    from{
+        transform: translateX(-25%);
+    }
+    to{
+        transform: translateX(-38%);
+    }
+}
+
+
+
+/* 갤러리 스타일 */
+
 
 /* 컨테이너 스타일 */
 

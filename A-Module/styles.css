@@ -384,6 +384,22 @@ tr>td:last-child, th:last-child, td>a{
     overflow: hidden;
 }
 
+.galleryRadio{
+    display: none;
+}
+
+.galleryBtn{
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+.galleryBtn label{
+    font-size: 30px;
+}
+
 #gallerySlide{
     width: 1600px;
     display: flex;
@@ -394,8 +410,19 @@ tr>td:last-child, th:last-child, td>a{
     height: 333px;
 }
 
+.gallerySeeMore{
+    display: none;
+}
+
+.galleryImg:hover .gallerySeeMore, p{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
 #description{
     width: 400px;
+    height: 333px;
     background-color: #3b3b3b;
     display: flex;
     flex-direction: column;
@@ -416,16 +443,40 @@ tr>td:last-child, th:last-child, td>a{
     align-items: center;
 }
 
+#one:checked ~ #oneBtn{
+    display: block ;
+}
+
 #two:checked ~ #gallerySlide{
     animation: 2s galleryMove1 forwards;
+}
+
+#two:checked ~ #threeBtn{
+   display: block;
 }
 
 #three:checked ~ #gallerySlide{
     animation: 2s galleryMove2 forwards;
 }
 
+#three:checked ~ #fourBtn{
+    display: block;
+}
+
 #four:checked ~ #gallerySlide{
     animation: 2s galleryMove3 forwards;
+}
+
+#four:checked ~ #fiveBtn{
+    display: block;
+}
+
+#five:checked ~ #gallerySlide{
+    animation: 2s galleryMove4 forwards;
+}
+
+#five:checked ~ #fourBtn{
+    display: block;
 }
 
 
@@ -453,10 +504,18 @@ tr>td:last-child, th:last-child, td>a{
         transform: translateX(-25%);
     }
     to{
-        transform: translateX(-38%);
+        transform: translateX(-37.5%);
     }
 }
 
+@keyframes galleryMove4 {
+    from{
+        transform: translateX(-37.5%);
+    }
+    to{
+        transform: translateX(-25%);
+    }
+}
 
 
 /* 갤러리 스타일 */

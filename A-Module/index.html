@@ -347,10 +347,16 @@
         <div class="implContainer">
             <h1>GALLERY</h1>
             <div id="gallery">
-                <input type="radio" name="galleryState" id="one" checked>
-                <input type="radio" name="galleryState" id="two">
-                <input type="radio" name="galleryState" id="three">
-                <input type="radio" name="galleryState" id="four">
+                <input class="galleryRadio" type="radio" name="galleryState" id="one" checked>
+                <input class="galleryRadio" type="radio" name="galleryState" id="two">
+                <input class="galleryRadio" type="radio" name="galleryState" id="three">
+                <input class="galleryRadio" type="radio" name="galleryState" id="four">
+                <input class="galleryRadio" type="radio" name="galleryState" id="five">
+                <button class="galleryBtn" id="oneBtn"><label for="two">></label></button>
+                <button class="galleryBtn" id="twoBtn"><label for="two">></l    abel></button>
+                <button class="galleryBtn" id="threeBtn"><label for="three">></label></button>
+                <button class="galleryBtn" id="fourBtn"><label for="four">></label></button>
+                <button class="galleryBtn" id="fiveBtn"><label for="five"><</label></button>
                 <div id="gallerySlide">
                     <div id="description">
                         <p>스킬스 베이스볼에 오신것을 환영합니다</p>
@@ -358,30 +364,51 @@
                         <P>야구 글러브등 다양한 용품을 대여 할 수 있습니다</P>
                         <P>모두 즐거운 야구 생활을 즐기세요</P>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg1">
                         <img src="/선수제공파일/images/04.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 1</p>
+                            <button>more</button>
+                        </div>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg2">
                         <img src="/선수제공파일/images/16.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 2</p>
+                            <button>more</button>
+                        </div>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg3">
                         <img src="/선수제공파일/images/26.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 3</p>
+                            <button>more</button>
+                        </div>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg4">
                         <img src="/선수제공파일/images/40.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 4</p>
+                            <button>more</button>
+                        </div>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg5">
                         <img src="/선수제공파일/images/48.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 5</p>
+                            <button>more</button>
+                        </div>
                     </div>
-                    <div class="galleryImg">
+                    <div class="galleryImg" id="galleryImg6">
                         <img src="/선수제공파일/images/32.jpg" alt="">
+                        <div class="gallerySeeMore">
+                            <p>Image 6</p>
+                            <button>more</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <button id="pervBtn">이전</button>
-                <button id="nextBtn">다음</button>
-            </div>
+            
         </div>
 
     <!-- 갤러리 영역 -->

@@ -41,7 +41,6 @@ header {
 /* 컨테이너 스타일 */
 #container{
     background-color: #2b2b2b;
-    margin-top: 60px;
     width: 1320px;
     height: auto;
     margin: 0 auto;
@@ -363,6 +362,13 @@ tr>td:last-child, th:last-child, td>a{
     animation: 0.5s acodionOpen ease-in;
 }
 
+.acodion ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .acodion ul li{
     font-weight: 800;
 }
@@ -540,6 +546,17 @@ tr>td:last-child, th:last-child, td>a{
 /* 굿즈 스타일 */
 
 /* 컨테이너 스타일 */
+
+/* 인포메이션 페이지 */
+.infoAcodion li{
+    margin: 10px 0;
+}
+
+#roadMap img{
+    border-radius: 10px;
+    margin: 20px 0;
+}
+/* 인포메이션 페이지 */
 
 /* 푸터 스타일 */
 footer{

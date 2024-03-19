@@ -4,13 +4,13 @@
 async function visitorsData() {
     return fetch("/선수제공파일/B_Module/visitors.json")
     .then(object => {return object.json()})
-    .then(data => {return data["data"]})
+    .then(datas => {return datas["data"]})
 }
 
 async function initChartData() {
-    const visitorsData = await visitorsData();
+    const data = await visitorsData();
 
-    visitorsData.forEach((league) => {
+    data.forEach((league) => {
         $("#leagueSelect").append(new Option(league.name, league.name));
     });
     // visitorData 수 만큼 #leagueSelect에 option을 추가
@@ -21,16 +21,23 @@ async function initChartData() {
     });
     // days수 만큼 #daySelect에 option을 추가
 
-    $("#leagueSelect", "#daySelect", "#directionSelect")
-        .change(() => {
-            const league = $("#leagueSelect").val
-            const day = $("#daySelect").val
-            const direction = $("#directionSelect").val
-            updateChart(visitorsData, league, day, direction)
-        })
-        .change();
 }
 
-function updateChart(visitorData, league, day, direction) {
+$("#leagueSelect", "#daySelect", "#directionSelect")
+    .change(() => {
+        const leagueData = $("#leagueSelect").val()
+        const dayData = $("#daySelect").val()
+        const directionData = $("#directionSelect").val()
+        // updateChart(data, leagueData, dayData, directionData)
+        console.log(leagueData, dayData, directionData);
+    }).change()
 
-}
+initChartData()
+
+// function updateChart(visitorData, leagueData, dayData, directionData) {
+//     const league = visitorData.find((l) => l.name === leagueData)
+//     const day = league.find((d) => d.day === dayData)
+
+
+//     console.log();
+// }

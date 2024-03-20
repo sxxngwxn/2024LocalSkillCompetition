@@ -8,9 +8,9 @@ async function visitorsData() {
 }
 
 async function initChartData() {
-    const data = await visitorsData();
+    const visitorData = await visitorsData();
 
-    data.forEach((league) => {
+    visitorData.forEach((league) => {
         $("#leagueSelect").append(new Option(league.name, league.name));
     });
     // visitorData 수 만큼 #leagueSelect에 option을 추가
@@ -21,23 +21,24 @@ async function initChartData() {
     });
     // days수 만큼 #daySelect에 option을 추가
 
+    $("#leagueSelect, #daySelect, #directionSelect") // ""은 1개;;
+        .change(() => {
+            const leagueData = $("#leagueSelect").val()
+            const dayData = $("#daySelect").val()
+            const directionData = $("#directionSelect").val()
+            updateChart(visitorData, leagueData, dayData, directionData)
+            console.log(leagueData, dayData, directionData);
+        })
 }
 
-$("#leagueSelect", "#daySelect", "#directionSelect")
-    .change(() => {
-        const leagueData = $("#leagueSelect").val()
-        const dayData = $("#daySelect").val()
-        const directionData = $("#directionSelect").val()
-        // updateChart(data, leagueData, dayData, directionData)
-        console.log(leagueData, dayData, directionData);
-    }).change()
-
-initChartData()
-
-// function updateChart(visitorData, leagueData, dayData, directionData) {
-//     const league = visitorData.find((l) => l.name === leagueData)
-//     const day = league.find((d) => d.day === dayData)
-
-
-//     console.log();
-// }
+function updateChart(visitorData, leagueData, dayData, directionData) {
+    const league = visitorData.find((l) => l.name ===leagueData)
+    console.log(league);
+    const day = league.visitors.find((d) => d.day === dayData)
+    console.log(day);
+    const dayVisitor = day.visitor
+    $("#visitorTable").empty()
+    $.each(dayVisitor, (time, person) => {
+        $("#visitorTable").append(`<tr><td>${time}</td><td>${person}</td></tr>`)
+    })
+}

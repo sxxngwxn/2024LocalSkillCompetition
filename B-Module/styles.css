@@ -590,6 +590,18 @@ p {
 
 /* 인포메이션 페이지 */
 
+/* 차트 스타일 */
+#visitorTable{
+    width: 100%;
+}
+
+#visitorTable td{
+    color: white;
+    font-size: 20px;
+    margin: 0 auto;
+}
+/* 차트 스타일 */
+
 /* 푸터 스타일 */
 footer {
     width: 100%;

@@ -591,14 +591,50 @@ p {
 /* 인포메이션 페이지 */
 
 /* 차트 스타일 */
-#visitorTable{
+.statistics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statistics h1{
+    color: white;
+    font-weight: 600;
+}
+
+.statistics div{
+    width: 1200px;
+}
+
+.visitorChartV{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+
+.visitorChartH{
     width: 100%;
 }
 
-#visitorTable td{
+
+#visitorChart div p{
     color: white;
+}
+
+#visitorTable{
+    width: 100%;
+    border: 1px solid white;
+}
+
+#visitorTable th, #visitorTable td{
+    color: white;
+    border: 1px solid white;
+    width: 50%;
+    height: 50px;
     font-size: 20px;
-    margin: 0 auto;
+    text-align: center;
 }
 /* 차트 스타일 */
 

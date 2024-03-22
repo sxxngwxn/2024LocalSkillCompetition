@@ -31,6 +31,7 @@ async function initChartData() {
         })
 }
 
+// 차트 구현 부분
 function updateChart(visitorData, leagueData, dayData, directionData) {
     const league = visitorData.find((l) => l.name ===leagueData)
     console.log(league);
@@ -56,4 +57,11 @@ function updateChart(visitorData, leagueData, dayData, directionData) {
     })
 }
 
+async function goodsData() {
+    return fetch("/선수제공파일/B_Module/goods.json")
+    .then(object => {return object.json()})
+    .then(goods => {return goods["data"]})
+}
+
 initChartData()
+console.log(goodsData());

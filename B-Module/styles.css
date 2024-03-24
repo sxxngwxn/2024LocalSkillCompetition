@@ -638,6 +638,29 @@ p {
 }
 /* 차트 스타일 */
 
+/* 굿즈 스타일 */
+.goods{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.goods>h1{
+    color: white;
+    margin-bottom: 10px;
+}
+
+#goodsGroup{
+    margin-bottom: 30px;
+}
+
+#goodsSelect{
+    display: flex;
+    margin-bottom: 20px;
+}
+/* 굿즈 스타일 */
+
 /* 푸터 스타일 */
 footer {
     width: 100%;

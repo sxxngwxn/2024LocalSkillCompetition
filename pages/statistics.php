@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="/선수제공파일/bootstrap-5.2.0-dist/css/bootstrap.css">
 </head>
 <body>
@@ -63,8 +63,55 @@
             </div>
         </div>
 
-        <div>
-            
+        <div class="goods">
+            <h1>goods</h1>
+            <div>
+                <div id="goodsSelect">
+                    <select class="form-select form-select-sm" aria-label="Small select example" id="separateOption">
+                        <option value="sd">판매량 내림차순</option>
+                        <option value="su">판매량 오름차순</option>
+                        <option value="pd">가격 내림차순</option>
+                        <option value="pu">가격 오름차순</option>
+                    </select>
+                </div>
+                <div id="goodsSelect">
+                    <select class="form-select form-select-sm" aria-label="Small select example" id="goodsGroup">
+                        <option value="all">전체</option>
+                    </select>
+                </div>  
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="goodsArea"></div>
+        </div>
+
+        <div id="fixOffer">
+            <h1>GOODS 수정 제안</h1>
+            <div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    GOODS 수정 제안하기
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="color: black;">
+                            <canvas>
+                                <img src="" alt="" id="imgBox">
+                            </canvas>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="file" id="fileUpload">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- 컨테이너 영역 -->
@@ -82,6 +129,6 @@
 <!-- 푸터 영역 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/선수제공파일/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
-    <script src="./app.js"></script>
+    <script src="../JS/app.js"></script>
 </body>
 </html>

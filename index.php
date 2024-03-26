@@ -4,13 +4,34 @@ $uri = $_SERVER['REQUEST_URI'];
 // echo($uri);
 
 $resource = explode("?", $uri);
-echo "<br> $resource[0] <br>";
-echo "<br> $resource[1] <br>";
-echo "<br> $resource[2] <br>";
+// echo "<br> resource[0] : $resource[0] <br>";
+// echo "<br> resource[1] : $resource[1] <br>";
+// echo "<br> resource[2] : $resource[2] <br>";
 
-// $path = explode("/", $uri);
+$resource0 = isset($resource[0]) ? $resource[0] : null;
+
+$path = explode("/", $resource0);
 // // $path[0]은 localhost
-// echo "<br> $path[1] <br>"; // localhost/path[1]
-// echo "<br> $path[2] <br>"; // localhost/path[1]/path[2]
-// echo "<br> $path[3] <br>"; // localhost/path[1]/path[2]/path[3]
+// echo "<br> path[1] : $path[1] <br>"; // localhost/path[1]
+// echo "<br> path[2] : $path[2] <br>"; // localhost/path[1]/path[2]
+// echo "<br> path[3] : $path[3] <br>"; // localhost/path[1]/path[2]/path[3]
+
+$page = "";
+switch ($path[1]) {
+    case '':
+        $page = "./pages/main.php";
+        break;
+    case 'information':
+    case 'statistics':
+    case 'reservation':
+    case 'goods':
+        $page = "./pages/" . $path[1] . ".php";
+        break;
+    
+    default:
+        $page = "./pages/NotFound.php";
+        break;
+}
+
+include($page);
 ?>

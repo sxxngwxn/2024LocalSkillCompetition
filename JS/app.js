@@ -190,15 +190,15 @@ function groupSort(data, sortData) {
     return data
 }
 
-const fileUpload = document.querySelector("#fileUpload")
-const imgBox = document.querySelector("#imgBox")
+// const fileUpload = document.querySelector("#fileUpload")
+// const imgBox = document.querySelector("#imgBox")
 
-fileUpload.addEventListener("change", () => {
-    console.log(fileUpload.value);
-    console.log(fileUpload.files);
-    console.log(fileUpload);
-    console.log(imgBox.src);
-})
+// fileUpload.addEventListener("change", () => {
+//     console.log(fileUpload.value);
+//     console.log(fileUpload.files);
+//     console.log(fileUpload);
+//     console.log(imgBox.src);
+// })
 
 // 차트 생성
 initChartData()

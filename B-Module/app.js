@@ -98,7 +98,7 @@ function goodsOnBoard(goodsData, sortData, groupData) {
     // // 가격 오름차순
     // goodsData.sort((first, second) => {
     //     return parseInt(first.price) - parseInt(second.price)
-    // })
+    // }) 
 
     // // 가격 내림차순
     // goodsData.sort((first, second) => {
@@ -110,109 +110,98 @@ function goodsOnBoard(goodsData, sortData, groupData) {
     //     return  first.sale - second.sale
     // })
 
-    // // 판매량 내림차순
+    // 판매량 내림차순
     goodsData.sort((first, second) => {
         return  second.sale - first.sale
     })
 
-    // 상위 3개 앞부분
     const topGoods = goodsData.slice(0, 3)
 
-    // console.log(topGoods);
-
-    topGoods.forEach((eachGoods) => {
+    $.each(topGoods, (index, value) => {
         $("#goodsArea").append(`
             <div class="card" style="width: 18rem; margin: 10px 5px;">
-                <img src="/선수제공파일/B_Module/${eachGoods.img}" class="card-img-top" alt="..." style="height: 200px;">
+                <img src="/선수제공파일/B_Module/${value.img}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
                     <h5 class="card-title" style="color: red;">BEST</h5>
-                    <h5 class="card-title">${eachGoods.title}</h5>
-                    <p class="card-text" style="color: black;">판매량 : ${eachGoods.sale}</p>
-                    <p class="card-text" style="color: black;">가격 : ${eachGoods.price}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">${value.title}</h5>
+                    <p class="card-text" style="color: black;">판매량 : ${value.sale}</p>
+                    <p class="card-text" style="color: black;">가격 : ${value.price}</p>
+                    <a href="#" class="btn btn-primary">구매하기</a>
                 </div>
             </div>
         `)
     })
 
-    // 상위 3개 뒷부분
     const leftGoods = goodsData.slice(3)
-    // console.log(goodsData);
-    if (sortData == "sd") {
-        leftGoods.sort((first, second) => {
-            return  second.sale - first.sale
-        })
+    // console.log(topGoods);
+    // console.log(leftGoods);
+    
+    const separateGroup = groupSeparate(leftGoods, groupData)
+    const sortGoods = groupSort(separateGroup, sortData)
+    // console.log(sortGoods);
 
-        leftGoods.forEach((eachGoods) => {
-            $("#goodsArea").append(`
-                <div class="card" style="width: 18rem; margin: 10px 5px;">
-                    <img src="/선수제공파일/B_Module/${eachGoods.img}" class="card-img-top" alt="..." style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">${eachGoods.title}</h5>
-                        <p class="card-text" style="color: black;">판매량 : ${eachGoods.sale}</p>
-                        <p class="card-text" style="color: black;">가격 : ${eachGoods.price}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+    $.each(sortGoods, (index, value) => {
+        $("#goodsArea").append(`
+            <div class="card" style="width: 18rem; margin: 10px 5px;">
+                <img src="/선수제공파일/B_Module/${value.img}" class="card-img-top" alt="..." style="height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">${value.title}</h5>
+                    <p class="card-text" style="color: black;">판매량 : ${value.sale}</p>
+                    <p class="card-text" style="color: black;">가격 : ${value.price}</p>
+                    <a href="#" class="btn btn-primary">구매하기</a>
                 </div>
-            `)
-        })
-    } else if (sortData == "su") {
-        leftGoods.sort((first, second) => {
+            </div>
+        `)
+    })
+}
+
+function groupSeparate(data, separateData) {
+    const separateArr = []
+
+    if (separateData == "all") {
+        return data
+    }
+
+    data.forEach((data) => {
+        (data.group == separateData) ? separateArr.push(data) : console.log("X");
+    })
+    return separateArr;
+}
+
+function groupSort(data, sortData) {
+    if (sortData == "su") {
+        data.sort((first, second) => {
             return  first.sale - second.sale
         })
-
-        leftGoods.forEach((eachGoods) => {
-            $("#goodsArea").append(`
-                <div class="card" style="width: 18rem; margin: 10px 5px;">
-                    <img src="/선수제공파일/B_Module/${eachGoods.img}" class="card-img-top" alt="..." style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">${eachGoods.title}</h5>
-                        <p class="card-text" style="color: black;">판매량 : ${eachGoods.sale}</p>
-                        <p class="card-text" style="color: black;">가격 : ${eachGoods.price}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            `)
-        })
-    } else if (sortData == "pd") {
-        leftGoods.sort((first, second) => {
+    } else if(sortData == "pd") {
+        data.sort((first, second) => {
             return  parseInt(second.price) - parseInt(first.price)
         })
-
-        leftGoods.forEach((eachGoods) => {
-            $("#goodsArea").append(`
-                <div class="card" style="width: 18rem; margin: 10px 5px;">
-                    <img src="/선수제공파일/B_Module/${eachGoods.img}" class="card-img-top" alt="..." style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">${eachGoods.title}</h5>
-                        <p class="card-text" style="color: black;">판매량 : ${eachGoods.sale}</p>
-                        <p class="card-text" style="color: black;">가격 : ${eachGoods.price}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            `)
-        })
-    } else if (sortData == "pu") {
-        leftGoods.sort((first, second) => {
+    } else if(sortData == "pu") {
+        data.sort((first, second) => {
             return parseInt(first.price) - parseInt(second.price)
         })
-
-        leftGoods.forEach((eachGoods) => {
-            $("#goodsArea").append(`
-                <div class="card" style="width: 18rem; margin: 10px 5px;">
-                    <img src="/선수제공파일/B_Module/${eachGoods.img}" class="card-img-top" alt="..." style="height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">${eachGoods.title}</h5>
-                        <p class="card-text" style="color: black;">판매량 : ${eachGoods.sale}</p>
-                        <p class="card-text" style="color: black;">가격 : ${eachGoods.price}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            `)
+    } else{
+        data.sort((first, second) => {
+            return  second.sale - first.sale
         })
     }
 
+    return data
 }
 
+const fileUpload = document.querySelector("#fileUpload")
+const imgBox = document.querySelector("#imgBox")
+
+fileUpload.addEventListener("change", () => {
+    console.log(fileUpload.value);
+    console.log(fileUpload.files);
+    console.log(fileUpload);
+    console.log(imgBox.src);
+})
+
+// 차트 생성
 initChartData()
+
+// 굿즈 생성
 goodsSeperate()

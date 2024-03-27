@@ -8,6 +8,11 @@ li {
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /* 헤더 스타일 */
 header {
     width: 100%;
@@ -675,6 +680,10 @@ p {
     font-size: 40px;
 }
 /* 굿즈 수정 제안 스타일 */
+
+/* 회원가입 */
+
+/* 회원가입 */
 
 /* 푸터 스타일 */
 footer {

@@ -28,10 +28,21 @@ switch ($path[1]) {
         $page = "./pages/" . $path[1] . ".php";
         break;
     
+    case 'join':
+        $page = "./pages/join.php";
+        break;
+    
     default:
         $page = "./pages/NotFound.php";
         break;
 }
 
-include($page);
+
+if ($path[1] == "join") {
+    include($page);
+} else{
+    include("./pages/header.php");
+    include($page);
+    include("./pages/footer.php");
+}
 ?>

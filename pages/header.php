@@ -36,29 +36,28 @@
                 </div>
 
                 <!-- form -->
-                <form action="./join.php" method="post">
+                <form action="/join" method="post">
                     <div class="modal-body">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">아이디</span>
-                            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="username">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">중복 확인</button>
+                            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="id" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">이름</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="name">
+                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="name" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">비밀번호</span>
-                            <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="password">
+                            <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="pw" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><img src="../img/captcha.png" style="width: 100px;"></span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="captcha">
+                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="captcha" required>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                        <button type="submit" class="btn btn-primary">가입하기</button>
+                        <button type="submit" class="btn btn-primary">중복확인 및 가입하기</button>
                     </div>
                 </form>
             </div>

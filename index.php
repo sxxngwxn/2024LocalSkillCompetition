@@ -29,7 +29,7 @@ switch ($path[1]) {
         break;
     
     case 'join':
-        $page = "./pages/join.php";
+        $page = "./api/join.php";
         break;
     
     default:

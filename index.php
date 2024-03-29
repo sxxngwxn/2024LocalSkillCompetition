@@ -17,10 +17,12 @@ $path = explode("/", $resource0);
 // echo "<br> path[3] : $path[3] <br>"; // localhost/path[1]/path[2]/path[3]
 
 $page = "";
+$headerFooterNone = false;
 switch ($path[1]) {
     case '':
         $page = "./pages/main.php";
         break;
+
     case 'information':
     case 'statistics':
     case 'reservation':
@@ -30,6 +32,17 @@ switch ($path[1]) {
     
     case 'join':
         $page = "./api/join.php";
+        $headerFooterNone = true;
+        break;
+
+    case 'login-':
+        $page = "./pages/loginPage.php";
+        $headerFooterNone = true;
+        break;
+
+    case 'login':
+        $page = "./api/login.php";
+        $headerFooterNone = true;
         break;
     
     default:
@@ -38,7 +51,7 @@ switch ($path[1]) {
 }
 
 
-if ($path[1] == "join") {
+if ($headerFooterNone == true) {
     include($page);
 } else{
     include("./pages/header.php");

@@ -21,7 +21,7 @@
             <a href="/goods" class="navE">goods</a>
         </span>
         <span>
-            <button type="button" class="btn btn-primary">로그인</button>
+            <a href="/login-"><button type="button" class="btn btn-primary">로그인</button></a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">회원가입</button>
         </span>
     </header>

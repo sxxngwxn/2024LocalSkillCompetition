@@ -21,7 +21,14 @@
             <a href="/goods" class="navE">goods</a>
         </span>
         <span>
-            <a href="/login-"><button type="button" class="btn btn-primary">로그인</button></a>
+            <?php
+                session_start();
+                if (!isset($_SESSION["name"])) { ?>
+                    <a href="/login-"><button type="button" class="btn btn-primary">로그인</button></a>
+            <?php } else{?>
+                    <a href="/logout"><button type="button" class="btn btn-primary">로그아웃</button></a>
+            <?php }
+            ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">회원가입</button>
         </span>
     </header>

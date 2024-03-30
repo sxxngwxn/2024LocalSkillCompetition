@@ -44,6 +44,11 @@ switch ($path[1]) {
         $page = "./api/login.php";
         $headerFooterNone = true;
         break;
+
+    case 'logout':
+        $page = "./api/logout.php";
+        $headerFooterNone = true;
+        break;
     
     default:
         $page = "./pages/NotFound.php";

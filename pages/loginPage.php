@@ -16,10 +16,6 @@
                         <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="id" id="idValue" pattern="[A-Za-z0-9]+"required>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">이름</span>
-                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="name" id="nameValue" pattern="[ㄱ-ㅎ가-힣]+" required>
-                    </div>
-                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">비밀번호</span>
                         <input type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="pw" id="pwValue" pattern="[A-Za-z0-9]+"required>
                     </div>
@@ -31,7 +27,7 @@
                             <option value="관리자">관리자</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">가입하기</button>
+                    <button type="submit" class="btn btn-primary">로그인</button>
                 </div>
             </form>
         </div>

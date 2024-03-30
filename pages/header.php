@@ -23,13 +23,14 @@
         <span>
             <?php
                 session_start();
-                if (!isset($_SESSION["name"])) { ?>
+                if (!isset($_SESSION["id"])) { ?>
                     <a href="/login-"><button type="button" class="btn btn-primary">로그인</button></a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">회원가입</button>
             <?php } else{?>
                     <a href="/logout"><button type="button" class="btn btn-primary">로그아웃</button></a>
+                    <a href="/myPage"><button type="button" class="btn btn-primary">마이페이지</button></a>
             <?php }
             ?>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">회원가입</button>
         </span>
     </header>
 

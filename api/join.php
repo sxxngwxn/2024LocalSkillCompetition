@@ -25,6 +25,8 @@
                     $stmt->execute([$id, $name, $pw]);
     
                     echo"<script>alert('관리자 승인 대기 중입니다.')</script>";
+
+                    echo"<script>location.replace('/')</script>";
     
                 } catch (PDOException $e) {
                     echo"<br>db에 값이 들어가는 중에 문제가 발생했습니다"."<br>";

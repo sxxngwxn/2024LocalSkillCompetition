@@ -8,7 +8,7 @@ $DB_LINK = "mysql:host={$DB_HOST};port={$DB_PORT};dbname={$DB_NAME}";
 
 try {
     $db = new PDO($DB_LINK, $DB_ID, $DB_PW);
-    echo "<script>alert('db연결에 성공')</script>";
+    // echo "<script>alert('db연결에 성공')</script>";
 } catch (PDOException $e) {
     echo "<script>alert('db연결에 실패')</script>";
 }

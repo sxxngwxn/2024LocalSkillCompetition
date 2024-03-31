@@ -29,6 +29,7 @@
             $_SESSION["id"] = $result["user_idx"];
             $_SESSION["username"] = $id;
             $_SESSION["name"] = $result["name"];
+            $_SESSION["position"] = $result["position"];
             $_SESSION["date"] = $result["loginDate"];
 
             // echo "<script>alert('이전 로그인 일자 및 시간 : {$_SESSION["id"]}')</script>";

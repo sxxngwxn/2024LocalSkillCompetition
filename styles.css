@@ -692,10 +692,14 @@ p {
     width: 500px;
     margin-top: 10%;
 }
+
 #resForm select, #resForm div{
     margin-top: 10px;
 }
 
+#resTable th, #resTable tr, #resTable td {
+    color: black !important;
+}
 /* 예약 스타일 */
 
 /* 로그인 */

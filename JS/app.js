@@ -200,8 +200,76 @@ function groupSort(data, sortData) {
 //     console.log(imgBox.src);
 // })
 
+function generateDays() {
+    const m4 = new Date(2024,4, 0).getDate()
+
+    for (let i = 0; i < m4; i++) {
+        $("#resDay").append(new Option(i + 1, i + 1));
+    }
+    
+    $("#resDay").change(() => {
+        const resSelectDay = $("#resDay").val()
+        const days = new Date(`2024-04-${resSelectDay}`).getDay();
+    
+        console.log(days);
+        if (days == 0 || days == 6) {
+            // $("#resLeague").val("주말리그")
+            $("#weekEnd").attr("disabled", false)
+            $("#nightTime").attr("disabled", true)
+            $("#dawnTime").attr("disabled", true)
+            console.log($("#resLeague").val());
+
+        } else{
+            // $("#resLeague").val("나이트리그")
+            $("#weekEnd").attr("disabled", true)
+            $("#nightTime").attr("disabled", false)
+            $("#dawnTime").attr("disabled", false)
+            console.log($("#resLeague").val());
+        }
+    }).change()
+
+    $("#resLeague").change(() => {
+        $("#resTime").empty()
+        const resLeague = $("#resLeague").val()
+        
+        console.log(resLeague);
+        if (resLeague == "나이트리그") {
+            $("#resTime").append(new Option("19시 경기", "t19"))
+            $("#resTime").append(new Option("23시 경기", "t23"))
+        } else if(resLeague == "새벽리그"){
+            $("#resTime").append(new Option("04시 경기", "t04"))
+            $("#resTime").append(new Option("07시 경기", "t07"))
+        } else if(resLeague == "주말리그"){
+            $("#resTime").append(new Option("09시 경기", "t09"))
+            $("#resTime").append(new Option("13시 경기", "t13"))
+            $("#resTime").append(new Option("15시 경기", "t15"))
+        }
+    }).change()
+
+    $("#resLeague, #peopleCount").change(() => {
+        const resLeague = $("#resLeague").val()
+        const resCount = $("#peopleCount").val()
+
+        console.log(resCount);
+        let onePrice = 0;
+
+        if (resLeague == "나이트리그") {
+            onePrice = 50000;
+        } else if(resLeague == "새벽리그"){
+            onePrice = 30000;
+        } else if(resLeague == "주말리그"){
+            onePrice = 100000;
+        }
+
+        let totalPrice = (onePrice * resCount) + ((resCount - 20) * 1000);
+        $("#totalPrice").val(totalPrice)
+    })
+}
+
 // 차트 생성
 initChartData()
 
 // 굿즈 생성
 goodsSeperate()
+
+generateDays()

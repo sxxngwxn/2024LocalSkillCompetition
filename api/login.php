@@ -26,9 +26,12 @@
             $statement = $db -> prepare($updataSql);
             $statement->execute([$id]);
 
-            $_SESSION["id"] = $id;
+            $_SESSION["id"] = $result["user_idx"];
+            $_SESSION["username"] = $id;
+            $_SESSION["name"] = $result["name"];
             $_SESSION["date"] = $result["loginDate"];
 
+            // echo "<script>alert('이전 로그인 일자 및 시간 : {$_SESSION["id"]}')</script>";
             echo "<script>alert('이전 로그인 일자 및 시간 : {$_SESSION["date"]}')</script>";
             echo"<script>location.replace('/')</script>";
         }

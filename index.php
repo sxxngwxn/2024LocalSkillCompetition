@@ -28,6 +28,7 @@ switch ($path[1]) {
     case 'reservation':
     case 'goods':
         $page = "./pages/" . $path[1] . ".php";
+        $headerFooterNone = true;
         break;
     
     case 'join':
@@ -52,6 +53,11 @@ switch ($path[1]) {
 
     case 'myPage':
         $page = "./pages/myPage.php";
+        $headerFooterNone = true;
+        break;
+    
+    case 'reserv':
+        $page = "./api/reserv.php";
         $headerFooterNone = true;
         break;
     
